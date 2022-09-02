@@ -1,20 +1,25 @@
-const express = require("express")
+const express = require("express");
 
-const { getAllRegister, getRegister, createRegister, editRegister, deleteRegister } = require("../controllers/register.controller")
+const {
+  getAllRegister,
+  getRegister,
+  createRegister,
+  editRegister,
+  deleteRegister,
+} = require("../controllers/register.controller");
 
-const registerRoutes = express.Router()
+const registerRoutes = express.Router();
 
 registerRoutes.get("/", getAllRegister);
 
-registerRoutes.get ("/:id", getRegister);
+registerRoutes.get("/:id", getRegister);
 
 registerRoutes.post("/", createRegister);
 
 registerRoutes.patch("/:id", editRegister);
 
+registerRoutes.delete("/:id", deleteRegister);
 
-registerRoutes.delete("/:id", deleteRegister)
-
-module.exports ={
-    registerRoutes,
-}
+module.exports = {
+  registerRoutes,
+};
